@@ -1,0 +1,11 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+  <title>{{page.title}}</title>
+{% endblock %}
+{% block site_heading %}
+  <h1>{{page.title}}</h1>
+  <span class="subheading">{{page.created_at}}</span>
+{% endblock %}
+{% block content %}
+    {{page.content|safe}}
+{% endblock %}

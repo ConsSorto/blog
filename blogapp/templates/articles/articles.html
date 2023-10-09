@@ -1,0 +1,11 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+  <title>Articulos</title>
+{% endblock %}
+{% block site_heading %}
+  <h1>Articulos</h1>
+  <span class="subheading">Listado de los articulos</span>
+{% endblock %}
+{% block content %}
+    {%include 'articles/list.html'%}
+{% endblock %}

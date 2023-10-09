@@ -1,0 +1,26 @@
+{% for article in articles %}
+    <!-- Post preview-->
+    <div class="post-preview">
+        <div class="text-center">
+            <img class="img-articles col-4" src= "{{article.image.url}}"></img>
+        </div>
+        
+        <a href="{% url 'article' article.id %}">
+            <h2 class="post-title">{{article.title}}</h2>
+            <h4>
+            {% for category in article.categories.all %}
+                {{category}} |
+            {% endfor %}
+            </h4>
+            <p class="post-subtitle">{{article.content|slice:100|safe}}</p>
+        </a>
+        <p class="post-meta">
+            Creado por <a href="#!">{{article.user}}</a>
+            el {{article.created_at}} actualizado el {{article.updated_at}}
+        </p>
+    </div>
+    <!-- Divider-->
+    <hr class="my-4" />
+{% endfor %}
+
+{% include 'articles/paginator.html'%}

@@ -1,0 +1,15 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+  <title>{{article.title}}</title>
+{% endblock %}
+{% block site_heading %}
+  <h1>{{article.title}}</h1>
+  <span class="subheading">Escrito por : {{article.user}} el {{article.created_at}} actualizado el {{article.updated_at}}</span>
+{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <img class="img-articles col-4" src= "{{article.image.url}}"></img>
+    </div>
+    </br>
+    {{article.content|safe}}
+{% endblock %}

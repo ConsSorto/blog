@@ -1,0 +1,21 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+  <title>Django Blog</title>
+{% endblock %}
+{% block site_heading %}
+  <h1>Djando Blog</h1>
+  <span class="subheading">Un blog creado con Django y Bootstrap 5</span>
+{% endblock %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert">
+<ul>
+  <div class="alert alert-success" role="alert">
+    <li>{{message}}</li>
+  </div>    
+</ul>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}
